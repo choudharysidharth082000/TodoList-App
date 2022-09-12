@@ -15,7 +15,7 @@ const Card = (props) => {
     var Contract = require("web3-eth-contract");
     // set provider for all later instances to use
     Contract.setProvider(Web3.givenProvider || "http://localhost:8545");
-    contract = new Contract(ABI, "0x1be9f511e9ebd8cd2a320533581465f547a9011b");
+    contract = new Contract(ABI, "0xd210bfeda5f6411d57356870432fed446372f927");
   };
 
   //useEffect to get the task from the contract

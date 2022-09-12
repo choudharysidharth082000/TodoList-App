@@ -22,14 +22,13 @@ const Home = () => {
 
     // set provider for all later instances to use
     Contract.setProvider(Web3.givenProvider || "http://localhost:8545");
-    contract = new Contract(ABI, "0x1be9f511e9ebd8cd2a320533581465f547a9011b");
+    contract = new Contract(ABI, "0xd210bfeda5f6411d57356870432fed446372f927");
     const getTasks = await contract.methods.getAllCompleted().call();
     setGetTask(getTasks);
-    console.log(getTask);
-    console.log(getTask);
   };
   useEffect(() => {
     web3Load();
+    
   }, []);
   const [task, setTask] = useState("");
   //handling the input tag
@@ -40,11 +39,13 @@ const Home = () => {
   };
   //HANDLING THE SUBMIT BUTTON
   const handleSubmit = async () => {
-    console.log(task);
+    
     try {
+      console.log(address);
       const postTask = await contract.methods.createTask(task).send({
         from: address,
       });
+      console.log(postTask);
       alert("Task Created");
     } catch (error) {
       console.log(error);

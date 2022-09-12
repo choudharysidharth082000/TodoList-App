@@ -8,13 +8,7 @@
 			}
 		],
 		"name": "createTask",
-		"outputs": [
-			{
-				"internalType": "string",
-				"name": "",
-				"type": "string"
-			}
-		],
+		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
@@ -36,6 +30,36 @@
 		],
 		"stateMutability": "nonpayable",
 		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "task",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "index",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "isCompleted",
+						"type": "bool"
+					}
+				],
+				"indexed": false,
+				"internalType": "struct todolist.todoList",
+				"name": "Task",
+				"type": "tuple"
+			}
+		],
+		"name": "taskCreate",
+		"type": "event"
 	},
 	{
 		"inputs": [],
